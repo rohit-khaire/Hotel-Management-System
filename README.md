@@ -3,10 +3,10 @@
 
 The Hotel Management System is a command-line application designed to automate and simplify the process of managing customer bookings, room occupancy, and check-outs in a hotel with a 50-room capacity. This project is developed using Java and JDBC (Java Database Connectivity), with MySQL as the backend database to handle and store customer data and room booking information.
 
-The system allows hotel staff to:
-Add new customers to the hotel’s database, ensuring room availability.
-Track customers checking out on a particular day.
-View the real-time room occupancy and manage bookings.
+The system allows hotel staff to:<br>
+Add new customers to the hotel’s database, ensuring room availability.<br>
+Track customers checking out on a particular day.<br>
+View the real-time room occupancy and manage bookings.<br>
 Delete customer records from the system.
 
 **Features**
@@ -43,16 +43,37 @@ Java & MySQL
 
 Clone this repository to your local machine:
 
-git clone https://github.com/rohit-khaire/Hotel-Management-System.git
+	git clone https://github.com/rohit-khaire/Hotel-Management-System.git
 
-Set up a MySQL database named hoteldb and configure the necessary tables. You can use the SQL script provided to create the necessary schema.
+Set up a MySQL database named hoteldb and configure the necessary tables. You can use the SQL script provided to create the necessary schema.<br>
+
+	create table customers(
+
+		id int auto_increment primary key,
+ 
+    	name varchar(100) not null,
+    
+    	age int not null,
+    
+    	contact varchar(10) not null,
+    
+    	checkin_date date not null,
+    
+    	checkout_date date not null,
+    
+    	room_number int not null,
+    
+    	unique(room_number)
+    
+	);
+
 
 Update the URL, USER, and PASSWORD values in the HotelManagementApp.java file with your MySQL database credentials.
 
 Compile and run the application:
 
-javac -cp .;mysql-connector-j-9.0.0.jar HotelManagementApp.java <br>
-java HotelManagement.java
+	javac -cp .;mysql-connector-j-9.0.0.jar HotelManagementApp.java
+    java HotelManagement.java
 
 Follow the on-screen prompts to interact with the system. Ready To Use!
 
